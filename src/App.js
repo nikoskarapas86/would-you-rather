@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React, { Component, Fragment } from 'react'
 import './App.css';
+import { handleInitialData }  from './actions/shared';
+import { connect } from 'react-redux'
+import { BrowserRouter as Router } from 'react-router-dom';
 
-function App() {
+class App extends Component {
+
+  componentDidMount(){
+    this.props.handleInitialData()
+  }
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
     </div>
   );
+  }
 }
+
+function mapStateToProps ({ authedUser }) {
+  return {
+    notLoggedIn: authedUser === null
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleInitialData: () => {
+      dispatch(handleInitialData())
+    }
+  }
+}
+
+
 
 export default App;

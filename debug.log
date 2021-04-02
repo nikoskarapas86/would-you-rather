@@ -1,0 +1,4 @@
+[0402/092353.066:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Η διοχέτευση έχει τερματιστεί. (0x6D)
+[0402/101906.658:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Η διοχέτευση έχει τερματιστεί. (0x6D)
+[0402/102008.065:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Η διοχέτευση έχει τερματιστεί. (0x6D)
+[0402/102124.984:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Η διοχέτευση έχει τερματιστεί. (0x6D)
