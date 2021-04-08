@@ -1,34 +1,43 @@
 import React, { Component, Fragment } from 'react'
 import './App.css';
-import { handleInitialData }  from './actions/shared';
+import { handleInitialData } from './actions/shared';
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import Login from './components/Login';
+import NewQuestion from './components/NewQuestion';
 
 class App extends Component {
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.handleInitialData()
   }
   render() {
-  return (
-    <div className="App">
-      <Router>
+    const { notLoggedIn } = this.props;
+    console.log(notLoggedIn)
+    return (
+      <div className="App">
+      <Switch>
+    {
+        notLoggedIn ? <Route path='/' exact component={Login}/> :
         <Fragment>
-        <div className='container'>
-        <Route path='/' exact component={Login} />
-         
-        </div>
-        </Fragment>
-      </Router>
+            <Router>
+              <div className='container'>
+              <Route path='/' component={NewQuestion}/>
+              </div>
+            </Router>
+          </Fragment>
+    }
+      </Switch>
      
-     
-    </div>
-  );
+
+
+
+      </div>
+    );
   }
 }
 
-function mapStateToProps ({ authedUser }) {
+function mapStateToProps({ authedUser }) {
   return {
     notLoggedIn: authedUser === null
   }
