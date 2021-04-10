@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import { handleAddQuestion } from '../actions/shared'
 
 class NewQuestion extends Component {
     state = {
@@ -19,7 +19,11 @@ class NewQuestion extends Component {
         });
     }
 
-
+    handleSubmit =(event)=>{
+        event.preventDefault();
+        const { questionOne, questionTwo } = this.state;
+        this.props.addQuestion(questionOne, questionTwo)
+    }
     render() {
         const { questionOne, questionTwo } = this.state;
         const { authedUser, users } = this.props;
@@ -65,6 +69,12 @@ function mapStateToProps({ authedUser, users }) {
         users,
     };
 }
+function mapDispatchToProps(dispatch) {
+    return {
+        addQuestion: (optionOne, optionTwo) => {
+          dispatch(handleAddQuestion(optionOne, optionTwo))
+        }
+    }
+  }
 
-
-export default connect(mapStateToProps)(NewQuestion)
+export default connect(mapStateToProps,mapDispatchToProps)(NewQuestion)
