@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import {Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import Login from './components/Login';
 import NewQuestion from './components/NewQuestion';
+import TableData from './components/TableData';
 
 class App extends Component {
 
@@ -22,7 +23,8 @@ class App extends Component {
         <Fragment>
             <Router>
               <div className='container'>
-              <Route path='/' component={NewQuestion}/>
+              {/* <Route path='/' component={NewQuestion}/> */}
+              <Route path='/' component={TableData}/>
               </div>
             </Router>
           </Fragment>
