@@ -1,17 +1,18 @@
 
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import {connect} from "react-redux";
 import { Link } from "react-router-dom";
 
-class Nav extends PureComponent {
+class Nav extends Component {
 
 render(){
     return(
         <div>
+            <span>nav</span>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+           
+                <li> <Link to='/table'>Table data</Link></li>
+                <li><Link to='/'>add a question</Link></li>
             </ul>
         </div>
         )
@@ -19,4 +20,4 @@ render(){
 }
 
 
-export default connect(mapStateToProps, null)(Nav)
+export default Nav

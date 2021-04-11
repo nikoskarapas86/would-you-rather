@@ -2,10 +2,11 @@ import React, { Component, Fragment } from 'react'
 import './App.css';
 import { handleInitialData } from './actions/shared';
 import { connect } from 'react-redux'
-import {Switch, BrowserRouter as Router, Route } from 'react-router-dom'
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import Login from './components/Login';
 import NewQuestion from './components/NewQuestion';
 import TableData from './components/TableData';
+import Nav from './components/Nav';
 
 class App extends Component {
 
@@ -17,20 +18,26 @@ class App extends Component {
     console.log(notLoggedIn)
     return (
       <div className="App">
-      <Switch>
-    {
-        notLoggedIn ? <Route path='/' exact component={Login}/> :
-        <Fragment>
-            <Router>
-              <div className='container'>
-              {/* <Route path='/' component={NewQuestion}/> */}
-              <Route path='/' component={TableData}/>
-              </div>
-            </Router>
-          </Fragment>
-    }
-      </Switch>
-     
+
+        {
+          notLoggedIn ? <Route path='/' exact component={Login} /> :
+            <div>
+
+
+
+              <Router>
+                <Nav />
+                <Fragment>
+                  <Route path='/' exact component={NewQuestion} />
+                  <Route path='/table' component={TableData} />
+                </Fragment>
+              </Router>
+
+            </div>
+
+        }
+
+
 
 
 
