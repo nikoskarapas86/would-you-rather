@@ -13,6 +13,7 @@ render(){
            
                 <li> <Link to='/table'>Table data</Link></li>
                 <li><Link to='/'>add a question</Link></li>
+                <li><Link to='/logout'>logout</Link></li>
             </ul>
         </div>
         )

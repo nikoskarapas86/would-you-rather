@@ -7,7 +7,7 @@ import Login from './components/Login';
 import NewQuestion from './components/NewQuestion';
 import TableData from './components/TableData';
 import Nav from './components/Nav';
-
+import Logout from './components/Logout';
 class App extends Component {
 
   componentDidMount() {
@@ -30,6 +30,7 @@ class App extends Component {
                 <Fragment>
                   <Route path='/' exact component={NewQuestion} />
                   <Route path='/table' component={TableData} />
+                  <Route path='/logout' component={Logout} />
                 </Fragment>
               </Router>
 
