@@ -10,6 +10,7 @@ import QuestionsOfUser from './components/QuestionsOfUser';
 import Nav from './components/Nav';
 import QuestionPanel from './components/QuestionPanel'
 
+import Logout from './components/Logout';
 class App extends Component {
 
   componentDidMount() {
@@ -34,6 +35,7 @@ class App extends Component {
                   <Route path='/table' component={TableData} />
                   <Route path='/questions'  component={QuestionsOfUser} />
                   <Route path="/question/:id" component={QuestionPanel} />
+                  <Route path='/logout' component={Logout} />
                 </Fragment>
               </Router>
 
