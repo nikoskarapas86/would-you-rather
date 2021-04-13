@@ -9,15 +9,20 @@ class NewQuestion extends Component {
     };
 
 
-    handleChange = (event, optionIndex) => {
-        const text = event.target.value;
 
-        this.setState(function (previousState) {
-            return optionIndex === 1
-                ? { ...previousState, 'questionOne': text }
-                : { ...previousState, 'questionTwo': text };
-        });
-    }
+    handleFirstChange = (event) => {
+        event.preventDefault();
+        this.setState({
+            questionOne : event.target.value
+        })
+      };
+
+      handleSecondChange = (event) => {
+        event.preventDefault();
+        this.setState({
+            questionTwo : event.target.value
+        })
+      };
 
     handleSubmit =(event)=>{
         event.preventDefault();
@@ -42,12 +47,12 @@ class NewQuestion extends Component {
                     <div>
                         <input
                             value={questionOne}
-                            onChange={(event) => this.handleChange(event, 1)} />
+                            onChange={ this.handleFirstChange} />
                     </div>
                     <div>
                         <input
                             value={questionTwo}
-                            onChange={(event) => this.handleChange(event, 2)} />
+                            onChange={this.handleSecondChange} />
 
                     </div>
                     <button

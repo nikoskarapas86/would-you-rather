@@ -6,7 +6,9 @@ import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import Login from './components/Login';
 import NewQuestion from './components/NewQuestion';
 import TableData from './components/TableData';
+import QuestionsOfUser from './components/QuestionsOfUser';
 import Nav from './components/Nav';
+import QuestionPanel from './components/QuestionPanel'
 
 class App extends Component {
 
@@ -30,6 +32,8 @@ class App extends Component {
                 <Fragment>
                   <Route path='/' exact component={NewQuestion} />
                   <Route path='/table' component={TableData} />
+                  <Route path='/questions'  component={QuestionsOfUser} />
+                  <Route path="/question/:id" component={QuestionPanel} />
                 </Fragment>
               </Router>
 
