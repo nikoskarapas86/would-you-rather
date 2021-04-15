@@ -17,9 +17,9 @@ class DashBoard extends Component {
     return (
       <div>
         <Tabs>
-          <TabList>
-            <Tab>answerd</Tab>
-            <Tab>unanswered</Tab>
+          <TabList className="tabs-header">
+            <Tab className="tab-btn">answerd</Tab>
+            <Tab className="tab-btn">unanswered</Tab>
 
           </TabList>
           <TabPanel>

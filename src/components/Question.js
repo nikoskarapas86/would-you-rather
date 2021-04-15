@@ -10,9 +10,9 @@ class Question extends Component {
     const { question, auth } = this.props;
     return (
 
-      <Link to={`/questions/${question.id}`} className='question'>
-        <div>
-          <ul>
+      <Link  style={{ textDecoration: 'none' }} to={`/questions/${question.id}`} className='question'>
+        <div className="question-container">
+          <ul className="question">
             <li >{question.optionOne.text}</li>
             <li>{question.optionTwo.text}</li>
           </ul>

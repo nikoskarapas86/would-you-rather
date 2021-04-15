@@ -197,3 +197,53 @@ form{
   justify-content: center;
   flex-direction: column;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 0.25rem;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+tbody tr:nth-child(odd) {
+  background: #eee;
+}
+
+.tabs-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-grey-light-3);
+  width:100%;
+  height:4rem;
+}
+
+.tab-btn{
+cursor: pointer;
+}
+.tab-btn:hover{
+color:black;
+}
+
+.question{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+
+}
+
+.question-container{
+  width:25%;
+ height: 200px;
+ background-color: var(--color-grey-light-1);
+  border: 1px solid var(--color-grey-dark-3);
+  border-radius: 5px;
+  box-shadow: var(--shadow-light);
+  margin: 10px auto;
+ 
+
+}
