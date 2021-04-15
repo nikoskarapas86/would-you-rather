@@ -1,8 +1,199 @@
-body {
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #ba265d;
+  --color-nav:#F0F8FF;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+  --line: 1px solid var(--color-grey-light-2);
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+  --shadow-light:0 2rem 5rem rgba(0,0,0,.06); }
+
+* {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  color: #252525;
+  padding: 0; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+html {
+  box-sizing: border-box;
+  font-size: 15px; }
+
+
+body {
+  min-height: 100vh;
+  color: var(--color-grey-dark-2);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+.login-container {
+  max-width: 35rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-dark);
+  min-height: 30rem; 
+  display: flex;
+  flex-direction: column;
+}
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0;
+      max-width: 100%;
+      width: 100%; } }
+
+
+      .header{
+        margin-top: 20px;
+      }
+
+      .selection{
+        margin-top:40px;
+      }
+
+
+      .btn {
+        width:80px;
+        height:40px;
+        position: relative;     
+        display: block;
+        margin: 20px auto;
+        padding: 0;     
+        overflow: hidden;     
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);       
+        background-color: #2ecc8f;
+        color: #ecf0f1;       
+        transition: background-color .3s;
+      }
+      
+      .btn:hover, .btn:focus {
+        background-color: #27ae60;
+      }
+      
+      .btn > * {
+        position: relative;
+      }    
+      .btn span {
+        display: block;
+        padding: 12px 24px;
+      }
+      
+      .btn:before {
+        content: "";   
+        position: absolute;
+        top: 50%;
+        left: 50%;       
+        display: block;
+        width: 0;
+        padding-top: 0;        
+        border-radius: 100%;      
+        background-color: rgba(236, 240, 241, .3);      
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      
+      .btn:active:before {
+        width: 120%;
+        padding-top: 120%;       
+        transition: width .2s ease-out, padding-top .2s ease-out;
+      }
+
+      select {
+        outline: 0;
+        background-image: none;
+        width: 30%;
+        height: 30px;
+        color:  var(--color-grey-dark-1);
+        cursor: pointer;
+        border:1px solid var(--color-grey-dark-1);
+        border-radius:3px;
+    }
+    .select {
+        position: relative;
+        display: block;
+        width: 15em;
+        height: 5em;
+        line-height: 3;
+        overflow: hidden;
+        border-radius: .25em;
+          
+    }
+
+    ul{
+      display: flex;
+      flex-direction: row;
+     
+      list-style-type: none;
+      align-self: center;
+    }
+
+li{
+margin-right:20px ;
+
+}
+
+.nav-container{
+  width:100%;
+  height:4rem;
+  background-color: var(--color-nav);
+  color:black;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link-item{
+  color:black;
+
+}
+.link-item:hover{
+  color:var( --color-grey-dark-1);
+
+}
+   
+textarea {
+  resize: none;
+}
+.card-container{
+  width:30%;
+ height: 300px;
+ background-color: var(--color-grey-light-1);
+  border: 1px solid var(--color-grey-dark-3);
+  border-radius: 5px;
+  box-shadow: var(--shadow-light);
+  margin: 70px auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 
+.text{
+  display: flex;
+  flex-direction: column;
+  width:70%;
+  margin:0 auto;
+}
+
+
+form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

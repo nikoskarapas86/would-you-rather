@@ -10,7 +10,7 @@ class TableData extends Component {
         const usersArray =[];
         keys.forEach(key => {usersArray.push(users[key])});
         return (
-            <div>
+            <div className="card-container">
                 <div>table with data</div>
                 <table>
                     <thead>

@@ -25,28 +25,18 @@ class App extends Component {
         {
           notLoggedIn ? <Route path='/' exact component={Login} /> :
             <div>
-
-
-
               <Router>
                 <Nav />
                 <Fragment>
                   <Route path='/' exact component={NewQuestion} />
                   <Route path='/table' component={TableData} />
                   <Route path='/questions'  component={QuestionsOfUser} />
-                  <Route path="/question/:id" component={QuestionPanel} />
+                  <Route path="/questions/:id" component={QuestionPanel} />
                   <Route path='/logout' component={Logout} />
                 </Fragment>
               </Router>
-
             </div>
-
         }
-
-
-
-
-
       </div>
     );
   }

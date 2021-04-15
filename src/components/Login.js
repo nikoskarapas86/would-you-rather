@@ -33,9 +33,12 @@ class Login extends Component {
     const selected = userId ? userId : '';
     console.log(selected)
     return (
-      <div>
+      <div className="login-container">
+        <div className="header">
         <h2>Login</h2>
-        <div>select a user to login</div>
+        </div>
+       <div className="selection">
+       <div>select a user to login</div>
         <div>
           <select value={selected} onChange={(event) => this.selectionChanged(event)}>
             <option value={''} disabled>Select user...</option>
@@ -47,12 +50,14 @@ class Login extends Component {
           </select>
         </div>
         <button
-          className='btn'
+          className='btn' type="button"
           disabled={userId === null}
           onClick={(event) => this.handleSubmit(event)}
         >
           Login
           </button>
+       </div>
+      
       </div>
     )
   }
