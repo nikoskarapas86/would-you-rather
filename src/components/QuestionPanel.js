@@ -15,30 +15,43 @@ class QuestionDetails extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log('wewewewewe')
         this.props.saveQuestionAnswer(this.state.selectedOption);
     };
 
-    
-    render() {
 
-        const { question, questionAuthor, answer, total, percOne, percTwo } = this.props;
+    render() {
+        console.log('-==-=--==-')
+        const { question, questionAuthor, answers, total, percOne, percTwo } = this.props;
+        // const answered = answers.indexOf(question.id) > -1 ? true : false;
+        const votesOptionOne = question.optionOne.votes.length;
+        const votesOptionTwo = question.optionTwo.votes.length;
+        const votesTotal = votesOptionOne + votesOptionTwo;
+        const percentVotesOptionOne = (votesOptionOne / votesTotal).toFixed(2) * 100;
+        const percentVotesOptionTwo = (votesOptionTwo / votesTotal).toFixed(2) * 100;
+
         const { selectedOption } = this.state;
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <div >
-                        <span>{question.optionOne.text}</span>
-                        <input type="radio" name="radio1" value="optionOne" onChange={this.radioSelected} />{' '}
-                    </div>
-                    <div >
-                        <span >{question.optionTwo.text}</span>
-                        <input type="radio" name="radio1" value="optionTwo" onChange={this.radioSelected} />{' '}
+            <div className="card-container">
+                <form className="form-container">
+                    <div>
+                        <div className="radio-content">
+                            <span>{question.optionOne.text}</span>
+                            <input className="radio" type="radio" name="radio1" value="optionOne" onChange={this.radioSelected} />{' '}
+                            {/* {answered && <span className='stats'>
+                                Votes: {question.optionTwo.votes.length} ({percentVotesOptionTwo}%)
+                            </span>} */}
+                        </div>
+                        <div className="radio-content">
+                            <span >{question.optionTwo.text}</span>
+                            <input className="radio" type="radio" name="radio1" value="optionTwo" onChange={this.radioSelected} />{' '}
+                        </div>
                     </div>
 
-                    <button disabled={selectedOption === ''}>Submit</button>
+
+                    <button className='btn' type="button" disabled={selectedOption === ''} onClick={(event) => this.handleSubmit(event)}>Submit</button>
                 </form>
             </div>
-
         )
     }
 }

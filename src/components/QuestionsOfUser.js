@@ -20,7 +20,6 @@ class DashBoard extends Component {
           <TabList className="tabs-header">
             <Tab className="tab-btn">answerd</Tab>
             <Tab className="tab-btn">unanswered</Tab>
-
           </TabList>
           <TabPanel>
             <div id="answerd" >
@@ -34,7 +33,6 @@ class DashBoard extends Component {
             </div>
           </TabPanel>
           <TabPanel>
-
             <div id="unanswered" >
               {
                 answeredQuestions.map(id =>
@@ -46,14 +44,7 @@ class DashBoard extends Component {
             </div>
           </TabPanel>
         </Tabs>
-
-
-
-
-
       </div>
-
-
     )
   }
 

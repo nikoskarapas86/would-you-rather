@@ -30,8 +30,8 @@ class App extends Component {
                 <Fragment>
                   <Route path='/' exact component={NewQuestion} />
                   <Route path='/table' component={TableData} />
-                  <Route path='/questions'  component={QuestionsOfUser} />
-                  <Route path="/questions/:id" component={QuestionPanel} />
+                  <Route path='/question'  component={QuestionsOfUser} />
+                  <Route path="/questions/:id" exact component={QuestionPanel} />
                   <Route path='/logout' component={Logout} />
                 </Fragment>
               </Router>

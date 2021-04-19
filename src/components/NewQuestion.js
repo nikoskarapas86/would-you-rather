@@ -40,8 +40,7 @@ class NewQuestion extends Component {
     render() {
         const { questionOne, questionTwo, redirection } = this.state;
         const { authedUser, users } = this.props;
-        console.log(authedUser)
-        console.log(users)
+        
 
         if (redirection === true) {
             return <Redirect to='/table' />
