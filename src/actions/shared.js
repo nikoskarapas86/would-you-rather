@@ -2,7 +2,7 @@ import { getInitialData } from '../utils/api'
 import { addUserQuestion, saveUserAnswer, receiveUsers } from '../actions/users'
 import { addQuestion, receiveQuestions, saveQuestionAnswer } from '../actions/questions'
 import { _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
-
+import { Redirect } from 'react-router-dom';
 export function handleInitialData() {
     return (dispatch) => {
         return getInitialData()
@@ -37,10 +37,13 @@ export function handleAnswer (qid, option) {
         qid,
         answer: option
       };
+      console.log(authedUser)
+      console.log(info)
       _saveQuestionAnswer(info)
           .then(() => {
               dispatch(saveQuestionAnswer(authedUser, qid, option));
               dispatch(saveUserAnswer(authedUser, qid, option))
+              return <Redirect to='/questions' />
           })
     }
 }

@@ -170,8 +170,10 @@ textarea {
   resize: none;
 }
 .card-container{
-  width:30%;
- height: 300px;
+  min-width:30%;
+ min-height: 300px;
+ max-width: fit-content;
+ max-height: fit-content;
  background-color: var(--color-grey-light-1);
   border: 1px solid var(--color-grey-dark-3);
   border-radius: 5px;
@@ -265,4 +267,8 @@ color:black;
 
 .radio{
   margin-left: 17px;
+}
+
+img{
+  width: 70px;
 }

@@ -8,9 +8,13 @@ class Question extends Component {
   
   render() {
     const { question, auth } = this.props;
+    console.log('option')
+   console.log(question.optionTwo.votes.length.votes>0)
+   console.log(question.optionOne.votes.length)
+   let isAnswered=question.optionOne.votes.length>0 && question.optionTwo.votes.length>0
     return (
 
-      <Link  style={{ textDecoration: 'none' }} to={`/questions/${question.id}`} className='question'>
+      <Link onClick={e => isAnswered? e.preventDefault():null}  style={{ textDecoration: 'none' }} to={`/questions/${question.id}`} className='question'>
         <div className="question-container">
           <ul className="question">
             <li >{question.optionOne.text}</li>

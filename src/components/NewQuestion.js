@@ -52,7 +52,7 @@ class NewQuestion extends Component {
                 <span className="card-header">
                 <h3>add a new question</h3>
                 <img
-                    src={`/${users[authedUser].avatarURL}`}
+             src={`${users[authedUser].avatarURL}`}
                     alt={`Avatar of ${authedUser}`}
                 />
                 </span>
