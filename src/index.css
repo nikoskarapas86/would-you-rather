@@ -238,8 +238,9 @@ color:black;
 }
 
 .question-container{
-  width:25%;
- height: 100px;
+  width:30%;
+ height: 200px;
+ min-height: fit-content;
  background-color: var(--color-grey-light-1);
   border: 1px solid var(--color-grey-dark-3);
   border-radius: 5px;
@@ -255,6 +256,7 @@ color:black;
   display:flex;
   justify-content:space-around;
   flex-direction: column;
+  margin-top: 80px;
   
 }
 

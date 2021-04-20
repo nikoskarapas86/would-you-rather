@@ -2,13 +2,13 @@ import React, { Component, Fragment } from 'react'
 import './App.css';
 import { handleInitialData } from './actions/shared';
 import { connect } from 'react-redux'
-import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Login from './components/Login';
 import NewQuestion from './components/NewQuestion';
 import TableData from './components/TableData';
 import QuestionsOfUser from './components/QuestionsOfUser';
 import Nav from './components/Nav';
-import QuestionPanel from './components/QuestionPanel'
+import QuestionPanel from './components/QuestionPanel';
 
 import Logout from './components/Logout';
 class App extends Component {
