@@ -37,6 +37,7 @@ class QuestionPanel extends Component {
         return (
             <div className="card-container">
                 <form className="form-container">
+                <h3>Would you rather :</h3>
                     <div>
                         <div className="radio-content">
                             <span>{question.optionOne.text}</span>

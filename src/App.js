@@ -17,34 +17,41 @@ class App extends Component {
     this.props.handleInitialData()
   }
   render() {
-    const { notLoggedIn } = this.props;
-    console.log(notLoggedIn)
+    const { authedUser } = this.props;
+    console.log(authedUser)
     return (
-      <div className="App">
+      <Router>
+        <div className="App">
 
-        {
-          notLoggedIn ? <Route path='/' exact component={Login} /> :
-            <div>
-              <Router>
-                <Nav />
-                <Fragment>
-                  <Route path='/' exact component={NewQuestion} />
-                  <Route path='/table' component={TableData} />
-                  <Route path='/question'  component={QuestionsOfUser} />
-                  <Route path="/questions/:id" exact component={QuestionPanel} />
-                  <Route path='/logout' component={Logout} />
-                </Fragment>
-              </Router>
-            </div>
-        }
-      </div>
+          {
+            authedUser == null ? (<Route    render={() => (
+           
+                <Login />
+            
+            )} />) :
+              <div>
+               
+                  <Nav />
+                  <Fragment>
+                    <Route path='/add'  component={NewQuestion} />
+                    <Route path='/table' component={TableData} />
+                    <Route path='/' exact component={QuestionsOfUser} />
+                    <Route path="/questions/:id" exact component={QuestionPanel} />
+                    <Route path='/logout' component={Logout} />
+                  </Fragment>
+               
+              </div>
+          }
+        </div>
+      </Router>
+
     );
   }
 }
 
 function mapStateToProps({ authedUser }) {
   return {
-    notLoggedIn: authedUser === null
+    authedUser
   }
 }
 
