@@ -37,8 +37,6 @@ export function handleAnswer (qid, option) {
         qid,
         answer: option
       };
-      console.log(authedUser)
-      console.log(info)
       _saveQuestionAnswer(info)
           .then(() => {
               dispatch(saveQuestionAnswer(authedUser, qid, option));

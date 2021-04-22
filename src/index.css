@@ -138,7 +138,7 @@ body {
     ul{
       display: flex;
       flex-direction: row;
-     
+  
       list-style-type: none;
       align-self: center;
     }
@@ -154,9 +154,11 @@ color: black;
   background-color: var(--color-nav);
   color:black;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
-
+.left-distance{
+  margin-left: 10px;
+}
 .link-item{
   color:black;
 
@@ -277,4 +279,15 @@ img{
 
 .flexed{
 margin-left:40%;
+}
+
+.right-part{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin-right:10px;
+}
+
+.nav-img{
+  width:25px;
 }

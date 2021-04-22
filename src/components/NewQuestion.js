@@ -43,8 +43,7 @@ class NewQuestion extends Component {
         
 
         if (redirection === true) {
-            console.log(redirection)
-            return <Redirect to='/table' />
+            return <Redirect to='/' />
         }
 
         return (

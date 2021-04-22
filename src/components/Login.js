@@ -31,7 +31,6 @@ class Login extends Component {
     const { users } = this.props;
     const { userId } = this.state;
     const selected = userId ? userId : '';
-    console.log(selected)
     return (
       <div className="login-container">
         <div className="header">

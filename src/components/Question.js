@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
 import QuestionResults from './QuestionResults';
 
 class Question extends Component {
@@ -9,9 +9,8 @@ class Question extends Component {
   render() {
     const { question,users,auth } = this.props;
 const isAnswered = this.props.isAnswered;
-console.log(users[question.author].avatarURL)
-
     return (
+     
       isAnswered?<QuestionResults {...this.props}/>:
       <Link style={{ textDecoration: 'none', color: 'black' }}  to={`/questions/${question.id}`} className='question'>
         <div className="question-container">

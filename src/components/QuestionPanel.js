@@ -18,7 +18,6 @@ class QuestionPanel extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.selectedOption)
         this.props.handleAnswer(this.props.question.id,this.state.selectedOption)
         this.setState({
             redirection: e.target.value,
@@ -31,6 +30,9 @@ class QuestionPanel extends Component {
         const { question } = this.props;
         const { redirection } = this.state;
         const { selectedOption } = this.state;
+            if(question === undefined){
+              return <Redirect to='/error' />  
+            }
         if (redirection === true) {
             return <Redirect to='/' />
         }

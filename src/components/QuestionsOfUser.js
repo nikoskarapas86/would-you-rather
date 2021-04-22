@@ -13,9 +13,10 @@ class DashBoard extends Component {
 
   render() {
     const { unansweredQuestions, answeredQuestions,users } = this.props;
-    console.log('answered',answeredQuestions)
-    console.log('unanswered',unansweredQuestions)
+ 
     return (
+    
+  
       <div>
         <Tabs>
           <TabList className="tabs-header">

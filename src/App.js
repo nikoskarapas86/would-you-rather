@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import './App.css';
 import { handleInitialData } from './actions/shared';
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route,Redirect } from 'react-router-dom'
 import Login from './components/Login';
 import NewQuestion from './components/NewQuestion';
 import TableData from './components/TableData';
@@ -18,33 +18,35 @@ class App extends Component {
   }
   render() {
     const { authedUser } = this.props;
-    console.log(authedUser)
+
     return (
       <Router>
         <div className="App">
 
           {
-            authedUser == null ? (<Route    render={() => (
-           
-                <Login />
-            
+            authedUser == null ? (<Route render={() => (
+
+              <Login />
+
             )} />) :
               <div>
-               
-                  <Nav />
-                  <Fragment>
-                    <Route path='/add'  component={NewQuestion} />
-                    <Route path='/table' component={TableData} />
-                    <Route path='/' exact component={QuestionsOfUser} />
-                    <Route path="/questions/:id" exact component={QuestionPanel} />
-                    {/* <Route path="/questions/xxx" component={NotFound} /> */}
-                    <Route path='/logout' component={Logout} />
-                  
-                  </Fragment>
-               
+
+                <Nav user={authedUser} />
+                <Fragment>
+                  <Route path='/add' exact component={NewQuestion} />
+                  <Route path='/table' exact component={TableData} />
+                  <Route path='/' exact component={QuestionsOfUser} />
+                  <Route path="/questions/:id" exact component={QuestionPanel} />
+                  {/* <Route path="*" exact component={NotFound} /> */}
+                  <Route path='/error' component={NotFound} />
+              
+                  <Route path='/logout' component={Logout} />
+
+                </Fragment>
+
               </div>
           }
-          
+
         </div>
       </Router>
 
