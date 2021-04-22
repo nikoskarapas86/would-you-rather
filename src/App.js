@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route,Redirect } from 'react-router-dom'
 import Login from './components/Login';
 import NewQuestion from './components/NewQuestion';
-import TableData from './components/TableData';
+import Leaderboard from './components/Leaderboard';
 import QuestionsOfUser from './components/QuestionsOfUser';
 import Nav from './components/Nav';
 import QuestionPanel from './components/QuestionPanel';
@@ -34,7 +34,7 @@ class App extends Component {
                 <Nav user={authedUser} />
                 <Fragment>
                   <Route path='/add' exact component={NewQuestion} />
-                  <Route path='/table' exact component={TableData} />
+                  <Route path='/leaderboard' exact component={Leaderboard} />
                   <Route path='/' exact component={QuestionsOfUser} />
                   <Route path="/questions/:id" exact component={QuestionPanel} />
                   {/* <Route path="*" exact component={NotFound} /> */}

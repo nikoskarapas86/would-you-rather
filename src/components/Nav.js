@@ -12,7 +12,7 @@ render(){
            
             <ul className="left-distance">
             <li><Link className="link-item" style={{ textDecoration: 'none' }} to='/'>Main page</Link></li>
-                <li><Link className="link-item" style={{ textDecoration: 'none' }} to='/table'>Table data</Link></li>
+                <li><Link className="link-item" style={{ textDecoration: 'none' }} to='/leaderboard'>Table data</Link></li>
                 <li><Link className="link-item" style={{ textDecoration: 'none' }} to='/add'>add a question</Link></li>
             </ul>
             <div className="right-part">
