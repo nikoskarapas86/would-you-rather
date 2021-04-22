@@ -32,7 +32,7 @@ class QuestionPanel extends Component {
         const { redirection } = this.state;
         const { selectedOption } = this.state;
         if (redirection === true) {
-            return <Redirect to='/question' />
+            return <Redirect to='/' />
         }
         return (
             <div className="card-container">

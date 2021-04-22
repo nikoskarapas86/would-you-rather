@@ -272,5 +272,9 @@ color:black;
 }
 
 img{
-  width: 70px;
+  width: 60px;
+}
+
+.flexed{
+margin-left:40%;
 }

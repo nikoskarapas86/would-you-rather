@@ -43,6 +43,7 @@ class NewQuestion extends Component {
         
 
         if (redirection === true) {
+            console.log(redirection)
             return <Redirect to='/table' />
         }
 
@@ -50,7 +51,7 @@ class NewQuestion extends Component {
 
             <div className="card-container">
                 <span className="card-header">
-                <h3>add a new question</h3>
+                <h3>Would You Rather</h3>
                 <img
              src={`${users[authedUser].avatarURL}`}
                     alt={`Avatar of ${authedUser}`}

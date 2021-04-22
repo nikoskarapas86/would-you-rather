@@ -12,7 +12,7 @@ class DashBoard extends Component {
 
 
   render() {
-    const { unansweredQuestions, answeredQuestions } = this.props;
+    const { unansweredQuestions, answeredQuestions,users } = this.props;
     console.log('answered',answeredQuestions)
     console.log('unanswered',unansweredQuestions)
     return (
@@ -27,7 +27,7 @@ class DashBoard extends Component {
               {
                 unansweredQuestions.map(id =>
                   <div key={id}>
-                    <Question isAnswered={false} id={id} />
+                    <Question isAnswered={false} id={id} users={users} />
                   </div>
                 )
               }
@@ -38,7 +38,7 @@ class DashBoard extends Component {
               {
                 answeredQuestions.map(id =>
                   <div key={id}>
-                    <Question isAnswered={true} id={id} />
+                    <Question isAnswered={true} id={id} users={users} />
                   </div>
                 )
               }
@@ -57,7 +57,8 @@ function mapStateToProps({ questions, users, authedUser }) {
   const answeredQuestions = Object.keys(user.answers).sort((a, b) => b.timestamp - a.timestamp);
   return {
     unansweredQuestions: Object.keys(questions).filter(qid => !answeredQuestions.includes(qid)).sort((a, b) => b.timestamp - a.timestamp),
-    answeredQuestions
+    answeredQuestions,
+    users
   }
 }
 

@@ -9,7 +9,7 @@ import TableData from './components/TableData';
 import QuestionsOfUser from './components/QuestionsOfUser';
 import Nav from './components/Nav';
 import QuestionPanel from './components/QuestionPanel';
-
+import NotFound from './components/NotFound';
 import Logout from './components/Logout';
 class App extends Component {
 
@@ -37,11 +37,14 @@ class App extends Component {
                     <Route path='/table' component={TableData} />
                     <Route path='/' exact component={QuestionsOfUser} />
                     <Route path="/questions/:id" exact component={QuestionPanel} />
+                    {/* <Route path="/questions/xxx" component={NotFound} /> */}
                     <Route path='/logout' component={Logout} />
+                  
                   </Fragment>
                
               </div>
           }
+          
         </div>
       </Router>
 
